@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="./dashboard.css">
+    
+</head>
+
+<body>
+    <div class="mainDiv">
+        <div class="header">
+            <h1>Welcome <span id="name"></span></h1>
+            <a href="./login.html"><i class="fa-solid fa-right-from-bracket"></i></a>
+        </div>
+      <div class="body">
+        <div class="expense">
+            <h1>EXPENSE DETAILS</h1>
+            <button onclick="addExpense()">Add Expense</button>
+        </div>
+        <div id="inp">
+          <div class="inpts">
+              <input id="description" type="text" placeholder="Expense Description">
+              <input id="amount" type="number" placeholder="Expense Amount">
+              <select id="category" name="select category">
+              <option>select category</option>
+              </select>
+          </div>
+          <div class="buttons">
+            <button onclick="add()">Add</button>
+            <button onclick="done()">Done</button>
+
+            <button onclick="openCategoryPopUp()">New Category</button>
+            <div id="categoryPopup" class="popup">
+              <h4>Add New Category:</h4>
+              <input type="text" id="popupInput">
+              <button class="signIn" onclick="closeCategoryPopup()">Done</button>
+            </div>
+
+          </div>
+        </div>    
+      </div>
+      <div class="search">
+      <input id="search" type="text" placeholder="Search by category..." onkeyup="searchFunction()">
+      </div>
+      <div class="table">
+        <table  cellpadding="5px" cellspacing="1px" id="table">
+            <tr>
+                <th id="tdId">Ex. id</th>
+                <th id="tdCategory">Category</th>
+                <th id="tdDescription">Description</th>
+                <th id="tdAmount">Amount</th>
+                <th id="tdAction">Action</th>
+            </tr>
+        </table>
+    </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
